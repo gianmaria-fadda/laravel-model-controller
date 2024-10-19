@@ -16,12 +16,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
+        @foreach ($movies as $movie)
+        <tr>
+            <th scope="row">{{ $movie->id  }}</th>
+            <td>{{ $movie->title  }}</td>
+          </tr>
+        @endforeach
     </tbody>
   </table>
 @endsection
