@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Movie;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
+    $movies = Movie::all();
+
+    dd($movies);
+
     return view('welcome', [
     ]);
 });
