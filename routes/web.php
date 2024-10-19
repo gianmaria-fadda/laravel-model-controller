@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Models\Movie;
+use App\http\Controllers\Guest\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,4 @@ use App\Models\Movie;
 |
 */
 
-Route::get('/', function () {
-    $movies = Movie::all();
-
-    return view('welcome', compact('movies'));
-});
+Route::get('/', [MainController::class, 'index'])->name('home');
